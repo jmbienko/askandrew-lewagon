@@ -1,0 +1,20 @@
+
+
+### 01_initsetup
+
+langchain
+openai
+pypdf
+langchain-openai # pip install -U langchain-openai
+chromadb
+
+### 02_data_loading
+
+
+
+
+### ML_LOGIC
+
+# init_setup.py
+
+Chroma
