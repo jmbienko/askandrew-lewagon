@@ -1,0 +1,17 @@
+.DS_Store
+.env
+.gitignore
+README.md
+requirements.txt
+setup.py
+askandrew/.DS_Store
+askandrew.egg-info/PKG-INFO
+askandrew.egg-info/SOURCES.txt
+askandrew.egg-info/dependency_links.txt
+askandrew.egg-info/not-zip-safe
+askandrew.egg-info/requires.txt
+askandrew.egg-info/top_level.txt
+askandrew/api/__init__.py
+askandrew/api/api.py
+askandrew/interface/__init__.py
+askandrew/interface/main.py

@@ -1,0 +1,3 @@
+.env
+persist_directory
+chroma/
