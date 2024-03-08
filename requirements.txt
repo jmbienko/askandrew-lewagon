@@ -18,3 +18,12 @@ chromadb
 # init_setup.py
 
 Chroma
+
+
+
+### FAST API & STREAMLIT
+
+#uvicorn
+#streamlit
+#fastapi
+

@@ -29,5 +29,8 @@ askandrew/vector_preprocessing/data_splitting.py
 askandrew/vector_preprocessing/embeddings.py
 docs/.DS_Store
 docs/example.txt
+embeddings/chroma.sqlite3
 params/__init__.py
 params/params.py
+params/__pycache__/__init__.cpython-310.pyc
+params/__pycache__/params.cpython-310.pyc
