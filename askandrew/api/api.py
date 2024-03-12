@@ -48,6 +48,10 @@ def chat(question):
 
     return {"question": question, "response": response}
 
+@app.get("/")
+def root():
+    return {'greeting':'Hello'}
+
 
 
 

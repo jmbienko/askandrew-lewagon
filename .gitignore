@@ -1,3 +1,4 @@
 .env
 persist_directory
 chroma/
+.env.yaml

@@ -4,3 +4,6 @@ pypdf
 langchain-openai
 chromadb
 Chroma
+uvicorn
+streamlit
+fastapi

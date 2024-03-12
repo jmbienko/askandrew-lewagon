@@ -2,3 +2,12 @@ Metadata-Version: 2.1
 Name: askandrew
 Version: 1.0.1
 Summary: Project Description
+Requires-Dist: langchain
+Requires-Dist: openai
+Requires-Dist: pypdf
+Requires-Dist: langchain-openai
+Requires-Dist: chromadb
+Requires-Dist: Chroma
+Requires-Dist: uvicorn
+Requires-Dist: streamlit
+Requires-Dist: fastapi

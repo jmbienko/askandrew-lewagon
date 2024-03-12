@@ -17,7 +17,6 @@ askandrew/api/api.py
 askandrew/interface/__init__.py
 askandrew/interface/main.py
 askandrew/ml_logic/.DS_Store
-askandrew/ml_logic/Mar_7_10_46_AMAskAndrew_main_wip.ipynb
 askandrew/ml_logic/__init__.py
 askandrew/ml_logic/init_setup.py
 askandrew/ml_logic/llm_setup.py

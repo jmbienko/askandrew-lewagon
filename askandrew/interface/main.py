@@ -1,4 +1,4 @@
-from params.params import *
+from askandrew.params import *
 
 
 print(open_api_key)

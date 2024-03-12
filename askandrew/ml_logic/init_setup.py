@@ -5,6 +5,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 import os
 #from params.params import openai_api_key
 import openai
+from askandrew.params import persist_directory
 
 def database_loading():
     embedding = OpenAIEmbeddings()
@@ -13,7 +14,7 @@ def database_loading():
     openai.api_key = os.environ.get('OPENAI_API_KEY')
 
     ###!!!!!remember to change it to absolute path!!!
-    persist_directory = "/Users/larshofferbert/code/jmbienko/askandrew-lewagon/askandrew/ml_logic/chroma"
+    #persist_directory = "/home/martina/code/jmbienko/askandrew-lewagon/askandrew/chroma"
 
     vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
     #vectordb.get()
