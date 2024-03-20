@@ -19,6 +19,9 @@ warnings.filterwarnings("ignore", category=DeprecationWarning, message="The func
 
 app = FastAPI()
 
+app.state.vectordb = database_loading()
+app.state.qa_chain_mr = start_llm(app.state.vectordb)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allows all origins
@@ -34,11 +37,11 @@ app.add_middleware(
 @app.get("/chat")
 def chat(question):
 
-    vectordb = database_loading() #returns vectordb
-    qa_chain_mr = start_llm(vectordb)
+    #vectordb = database_loading() #returns vectordb
+    #qa_chain_mr = start_llm(vectordb)
     #   question = user_input()
-    output = answer_mmr(vectordb, question)
-    response = llm_based_answer(output, qa_chain_mr, question)
+    output = answer_mmr(app.state.vectordb, question)
+    response = llm_based_answer(output, app.state.qa_chain_mr, question)
 
 #    Process the input question through user_input function before sending to chatbot
 #    processed_question = user_input(query.question)

@@ -61,23 +61,48 @@ for message in st.session_state.messages:
 if prompt := st.chat_input('Just ask me'):
     # Display user message in chat message container
     st.chat_message("user", avatar=querier_avatar).markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Make a request to the FastAPI server
     fastapi_url = "http://127.0.0.1:8000/chat"  # Adjust the URL based on your FastAPI server location
     response = requests.get(fastapi_url, params={"question": prompt}).json()
 
+    llm_answer = response['response']['result']
     source_documents = response['response']['source_documents']
     sources = [doc['metadata']['source'] for doc in source_documents]
     cleaned_sources = set(source.replace('/Users/larshofferbert/code/hofferBERT/askandrew_langchain/docs/', '').replace('.txt', '') for source in sources)
     sources_list = ', '.join(cleaned_sources)
 
-    llm_answer = response['response']['result']
-    final_answer = f"{llm_answer} \n\n**Find more in episode:** \n{sources_list}"
+    final_answer = f"{llm_answer}\n\n**Find more in episode:** {sources_list}"
 
     # Display assistant response in chat message container
     with st.chat_message("Andrew", avatar=assistant_avatar):
-        st.markdown(final_answer) # Use final_answer instead of response["response"]
+        st.markdown(final_answer)
 
-    st.session_state.messages.append({"role": "Andrew", "content": response["response"]})
+    # Only append the relevant information to the chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "Andrew", "content": final_answer})
+
+
+# if prompt := st.chat_input('Just ask me'):
+#     # Display user message in chat message container
+#     st.chat_message("user", avatar=querier_avatar).markdown(prompt)
+#     # Add user message to chat history
+#     st.session_state.messages.append({"role": "user", "content": prompt})
+
+#     # Make a request to the FastAPI server
+#     fastapi_url = "http://127.0.0.1:8000/chat"  # Adjust the URL based on your FastAPI server location
+#     response = requests.get(fastapi_url, params={"question": prompt}).json()
+
+#     source_documents = response['response']['source_documents']
+#     sources = [doc['metadata']['source'] for doc in source_documents]
+#     cleaned_sources = set(source.replace('/Users/larshofferbert/code/hofferBERT/askandrew_langchain/docs/', '').replace('.txt', '') for source in sources)
+#     sources_list = ', '.join(cleaned_sources)
+
+#     llm_answer = response['response']['result']
+#     final_answer = f"{llm_answer} \n\n**Find more in episode:** \n{sources_list}"
+
+#     # Display assistant response in chat message container
+#     with st.chat_message("Andrew", avatar=assistant_avatar):
+#         st.markdown(final_answer) # Use final_answer instead of response["response"]
+
+#     st.session_state.messages.append({"role": "Andrew", "content": response["response"]})

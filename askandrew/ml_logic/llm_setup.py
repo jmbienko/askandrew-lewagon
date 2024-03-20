@@ -26,7 +26,7 @@ def start_llm(vectordb):
     qa_chain_mr = RetrievalQA.from_chain_type(
     llm,
     retriever=vectordb.as_retriever(),
-    chain_type="refine",
+    chain_type="stuff",
 
     #for a quicker result: change to
     #chain_type_kwargs={"prompt": QA_CHAIN_PROMPT},
