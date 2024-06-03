@@ -4,9 +4,6 @@ from langchain.prompts import PromptTemplate
 from askandrew.ml_logic.init_setup import *
 
 
-
-### VECTORDB - SHOULD I CALL IT BEFOIRE I CAN USE IT? ###
-
 def start_llm(vectordb):
 
     from langchain_community.chat_models import ChatOpenAI
