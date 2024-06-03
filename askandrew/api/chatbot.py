@@ -2,7 +2,6 @@ from askandrew.ml_logic.init_setup import database_loading
 from askandrew.ml_logic.llm_setup import start_llm
 from askandrew.ml_logic.question_answer import user_input, answer_ss, answer_mmr, llm_based_answer
 from askandrew.api.api import *
-
 import warnings
 
 def chatbot(question):
@@ -15,12 +14,6 @@ def chatbot(question):
 
     qa_chain_mr = start_llm(vectordb)
 
- #   question = user_input()
-
     output = answer_mmr(vectordb, question)
 
     response = llm_based_answer(output, qa_chain_mr, question)
-
-#    return response
-
-#chatbot()
