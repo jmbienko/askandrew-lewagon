@@ -1,30 +1,9 @@
-
-
-### 01_initsetup
-
 langchain
 openai
 pypdf
 langchain-openai # pip install -U langchain-openai
 chromadb
-#==0.3.29
-
-
-### 02_data_loading
-
-
-
-
-### ML_LOGIC
-
-# init_setup.py
-
 Chroma
-
-
-
-### FAST API & STREAMLIT
-
 uvicorn
 streamlit
 fastapi
