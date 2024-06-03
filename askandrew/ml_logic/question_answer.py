@@ -23,12 +23,6 @@ def answer_ss(vectordb, question):
 
     output = vectordb.similarity_search(question,k=3)
 
-    #Showing the k=n numbers of answers
-
-    #print(f"ss_answer 1 - content: \n {output[0].page_content}, \n \nsource: \n{output[0].metadata}\n\n")
-    #print(f"ss_answer 2 - content: \n {output[1].page_content}, \n \nsource: \n{output[1].metadata}\n\n")
-    #print(f"ss_answer 3 - content: \n {output[2].page_content}, \n \nsource: \n{output[2].metadata}\n\n")
-
     return output
 
 # Maximum-Marginal-Relevance-Answer: provide k content chunks form vectordb, using similarity search method
@@ -37,10 +31,6 @@ def answer_mmr(vectordb, question):
     from langchain_community.chat_models import ChatOpenAI
 
     output = vectordb.max_marginal_relevance_search(question,k=4,fetch_k=5)
-
-
-    #print(f"mmr_answer 1 - content: \n {output[0].page_content}, \n \nsource: \n{output[0].metadata}\n\n")
-    #print(f"mmr_answer 2 - content: \n {output[1].page_content}, \n \nsource: \n{output[1].metadata}\n\n")
 
     return output
 
